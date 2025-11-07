@@ -1,397 +1,561 @@
-# Syllabus: LLM Commerce â€” Chatbot de Compras Inteligentes
+# SYLLABUS - Tópicos Avanzados
+## LLM Applications - Sistema Multi-Red Social
 
-**Materia:** TÃ³picos Avanzados de ProgramaciÃ³n (Algoritmos Generativos)
-**Universidad:** Universidad AutÃ³noma Gabriel RenÃ© Moreno (UAGRM)
-**DuraciÃ³n:** 4 semanas (4â€“27 de noviembre 2025)
-**Docentes:** Ing. Miguel Peinado (Titular) â€” Brandon Valle (Invitado)
-
----
-
-## ðŸ“‹ InformaciÃ³n General
-
-### DescripciÃ³n del Curso
-Este curso integra modelos de lenguaje (LLMs) en aplicaciones del mundo real, combinando backends en Python y Node.js con interfaces modernas desarrolladas en React. Los estudiantes construirÃ¡n un **Chatbot de Compras Inteligentes** capaz de buscar, comparar y recomendar productos utilizando datos reales de un catÃ¡logo. El progreso es incremental y prioriza el backend (RAG, lÃ³gica de carrito, evaluaciones); el frontend se mantiene mÃ­nimo (chat, catÃ¡logo, login) para resaltar las decisiones de arquitectura LLM.
-
-- **Formato:** Trabajo individual o en parejas (1â€“2 estudiantes)
-- **Sesiones:** 8 clases (2 por semana)
-- **Horas totales:** ~32 horas (16 horas presenciales + 16 horas de trabajo independiente)
-- **Ritmo:** Cada clase (desde la 3) inicia con revisiÃ³n breve de tarea, continÃºa con avance guiado y termina con prÃ¡ctica supervisada.
-
-### Roles Posibles
-- **Backend & LLM Engineer:** Funciones, embeddings, API, lÃ³gica de negocio
-- **Frontend & UX Engineer:** Chat UI, diseÃ±o, experiencia visual
+**Universidad:** Universidad Autónoma Gabriel René Moreno (UAGRM)
+**Facultad:** Ingeniería en Sistemas
+**Semestre:** 2025-02
+**Período:** 7 de noviembre - 28 de noviembre de 2025
+**Modalidad:** Presencial - Trabajo Individual
 
 ---
 
-## ðŸŽ¯ Objetivos de Aprendizaje
+## 1. INFORMACIÓN GENERAL
 
-### TÃ©cnicos
-1. Comprender los fundamentos de los LLMs y su integraciÃ³n en aplicaciones
-2. Implementar arquitecturas RAG (Retrieval Augmented Generation)
-3. Desarrollar APIs con FastAPI o NestJS
-4. DiseÃ±ar interfaces conversacionales en React
-5. Aplicar pruebas de prompts y function calling
+### 1.1 Datos del Curso
+- **Nombre:** Tópicos Avanzados - LLM Applications
+- **Código:** [Código del curso]
+- **Créditos:** [Número de créditos]
+- **Nivel:** Pregrado Avanzado
+- **Requisitos:** Programación Avanzada, Bases de Datos, Desarrollo Web
 
-### Transversales (Soft Skills)
-1. ColaboraciÃ³n tÃ©cnica efectiva
-2. ComunicaciÃ³n clara de soluciones tÃ©cnicas
-3. Pensamiento crÃ­tico y Ã©tico sobre IA
-4. GestiÃ³n de proyectos y entregas incrementales
+### 1.2 Docente
+- **Nombre:** [Nombre del docente]
+- **Email:** [Email institucional]
+- **Horario de consultas:** [Definir]
+- **Ubicación:** [Oficina/Aula]
 
----
-
-## âš™ï¸ Stack TecnolÃ³gico
-
-| Componente | TecnologÃ­as |
-|------------|-------------|
-| **Frontend** | React + Vite + TailwindCSS |
-| **Backend** | FastAPI (Python) o NestJS (Node.js) |
-| **Base de Datos** | SQLite o PostgreSQL (con pgvector) |
-| **Vector Store** | ChromaDB / pgvector |
-| **LLM Provider** | OpenAI API / Ollama (local) |
-
-### Flujo General
-```
-Usuario â†’ Chat (Frontend) â†’ API /chat â†’ LLM â†’ FunciÃ³n â†’ Respuesta â†’ UI actualizada
-```
+### 1.3 Horario de Clases
+- **Días:** Martes y Jueves
+- **Horario:** [Definir horario]
+- **Aula:** [Definir aula]
+- **Duración:** 6 clases + 1 presentación final
 
 ---
 
-## ðŸ“† Cronograma Detallado de Clases
+## 2. DESCRIPCIÓN DEL CURSO
 
-> A partir de la Clase 3 cada sesiÃ³n se organiza en tres bloques: **RevisiÃ³n rÃ¡pida de tarea**, **Avance guiado del backend** y **PrÃ¡ctica supervisada**.
+### 2.1 Propósito
 
-### Clase 1 â€” IntroducciÃ³n y Plan Incremental (4 nov)
+Este curso intensivo de 4 semanas ofrece una experiencia práctica en el desarrollo de aplicaciones con Large Language Models (LLMs). Los estudiantes construirán un sistema completo de publicación automatizada en redes sociales, integrando múltiples APIs y tecnologías modernas.
 
-#### ðŸŽ¯ Tema / Topic
-- Panorama de los LLM y su rol en el proyecto LLM Commerce
-- Arquitectura macro (frontend mÃ­nimo + backend orientado a servicios + LLM)
-- Estrategia incremental y backlog por hitos
+### 2.2 Justificación
 
-#### ðŸ’» En clase / In-class work
-- Mapeo del flujo conversacional ideal
-- PriorizaciÃ³n de mÃ³dulos backend (catÃ¡logo, buscador, carrito, evaluaciones)
-- RedacciÃ³n colaborativa de prompts base sin ejecuciÃ³n tÃ©cnica
+En el contexto actual, las organizaciones necesitan optimizar su presencia en redes sociales. Este proyecto aborda un problema real: la adaptación manual de contenido para diferentes plataformas es ineficiente y propensa a errores. Los estudiantes aprenderán a:
 
-#### ðŸ§ª Tarea / Homework
-- Preparar catÃ¡logo inicial (â‰¥20 productos) y definir atributos clave
-- Documentar 5 casos de uso objetivo (bÃºsqueda, comparaciÃ³n, presupuesto, carrito, checkout simulado)
-- Instalar dependencias mÃ­nimas (Node 20+, Python 3.10+, provider elegido) y dejar repositorio listo para el scaffolding
+- Aplicar LLMs a problemas reales de negocio
+- Integrar APIs de terceros (Meta, LinkedIn, TikTok, WhatsApp)
+- Desarrollar sistemas full-stack completos
+- Implementar arquitecturas escalables con colas y microservicios
 
-### Clase 2 â€” Backend Base y Primer Prompt (7 nov)
+### 2.3 Enfoque Pedagógico
 
-#### ðŸŽ¯ Tema / Topic
-- Estructura del repositorio backend
-- IntegraciÃ³n mÃ­nima con proveedor LLM (SDK o llamada HTTP)
-- GestiÃ³n centralizada de prompts y configuraciÃ³n
-
-#### ðŸ’» En clase / In-class work
-- Scaffolding del proyecto (FastAPI o NestJS) y configuraciÃ³n de `.env`
-- ImplementaciÃ³n del endpoint `/chat` que pasa el prompt base al LLM
-- PrÃ¡ctica guiada con llamadas de prueba y logging bÃ¡sico
-
-#### ðŸ§ª Tarea / Homework
-- Documentar el flujo de request/response del endpoint `/chat`
-- Ajustar el prompt base segÃºn resultados de la prÃ¡ctica
-- Preparar script/colab para generar embeddings del catÃ¡logo (sin ejecutarlo aÃºn)
-
-### Clase 3 â€” RAG: Ingesta y BÃºsqueda SemÃ¡ntica (11 nov)
-
-#### RevisiÃ³n
-- Comprueba entregables de la Clase 2 (endpoint funcionando y documentaciÃ³n)
-
-#### ðŸŽ¯ Tema / Topic
-- Embeddings y vector stores aplicados al catÃ¡logo
-- DiseÃ±o de servicios de bÃºsqueda semÃ¡ntica reutilizables
-- Buenas prÃ¡cticas para citar fuentes en la respuesta del LLM
-
-#### ðŸ’» En clase / In-class work
-- Generar embeddings del catÃ¡logo (secciÃ³n prÃ¡ctica) y almacenarlos (ChromaDB o pgvector)
-- Exponer `/catalog/search?q=` retornando resultados con score y metadata
-- Integrar el buscador con `/chat` para enriquecer respuestas
-
-#### ðŸ§ª Tarea / Homework
-- Registrar al menos 6 casos de prueba de bÃºsqueda con resultados esperados
-- Ajustar prompts para incluir referencias a productos encontrados
-- Identificar huecos de datos en el catÃ¡logo y plan de limpieza
-
-### Clase 4 â€” Function Calling y Carrito Persistente (14 nov)
-
-#### RevisiÃ³n
-- Validar que `/catalog/search` y la integraciÃ³n con `/chat` estÃ©n presentes
-
-#### ðŸŽ¯ Tema / Topic
-- DefiniciÃ³n de funciones (JSON Schema) para Ã³rdenes del LLM
-- GestiÃ³n de estado del carrito (en memoria, base de datos o cache)
-- Estrategias de orquestaciÃ³n y validaciÃ³n de argumentos
-
-#### ðŸ’» En clase / In-class work
-- Implementar `add_to_cart`, `remove_from_cart`, `list_cart`
-- Configurar el LLM para invocar funciones segÃºn la intenciÃ³n del usuario
-- PrÃ¡ctica: flujos end-to-end desde prompt hasta actualizaciÃ³n del carrito
-
-#### ðŸ§ª Tarea / Homework
-- Documentar tres flujos completos (bÃºsqueda â†’ selecciÃ³n â†’ carrito)
-- AÃ±adir pruebas unitarias/funcionales mÃ­nimas para las funciones del carrito
-- Identificar riesgos de seguridad o errores comunes y mitigaciones
-
-### Clase 5 â€” EvaluaciÃ³n, Observabilidad y PreparaciÃ³n de Checkpoint (18 nov)
-
-#### RevisiÃ³n
-- Repaso de flujos documentados y pruebas bÃ¡sicas del carrito
-
-#### ðŸŽ¯ Tema / Topic
-- MÃ©tricas para conversaciones (aciertos, tiempo de respuesta, errores)
-- Prompt evals rÃ¡pidos y registros de interacciÃ³n (logging estructurado)
-- PreparaciÃ³n de narrativa para la presentaciÃ³n del 20 de noviembre
-
-#### ðŸ’» En clase / In-class work
-- Configurar almacenamiento de logs (archivo o base de datos)
-- Implementar un script de evaluaciÃ³n con prompts representativos
-- RevisiÃ³n cruzada entre equipos del guion de la demo intermedia
-
-#### ðŸ§ª Tarea / Homework
-- Pulir backlog de mejoras prioritarias previo a la presentaciÃ³n
-- Crear diapositiva/resumen con arquitectura y learnings clave
-- Ensayar demo de 8â€“10 minutos incluyendo preguntas esperadas
-
-### Clase 6 â€” Presentaciones Parciales (20 nov)
-
-#### Actividades
-- PresentaciÃ³n del MVP por equipo (10 min demo + 5 min feedback)
-- RetroalimentaciÃ³n en vivo (instructores + compaÃ±eros)
-- Reforzar prÃ³ximos hitos hacia la entrega final
-
-#### Entregables
-- Demo funcional con catÃ¡logo consultable, RAG integrado y carrito operativo
-- Lista de mejoras priorizadas post-feedback (prÃ³ximo sprint)
+**Aprendizaje Basado en Proyectos (ABP):**
+- Proyecto único que se desarrolla incrementalmente
+- Entregables semanales que construyen sobre el anterior
+- Demo y exposición en cada clase
+- Presentación final del sistema completo
 
 ---
 
-### Clase 7 â€” Endurecimiento Backend y Front Esencial (25 nov)
+## 3. COMPETENCIAS Y OBJETIVOS
 
-#### RevisiÃ³n
-- Seguimiento de tareas surgidas en la presentaciÃ³n parcial
+### 3.1 Competencia General
 
-#### ðŸŽ¯ Tema / Topic
-- Validaciones adicionales, manejo de errores y autenticaciÃ³n bÃ¡sica
-- IntegraciÃ³n del front mÃ­nimo (chat, catÃ¡logo, login) con el backend
-- PreparaciÃ³n de entornos de despliegue local o staging
+Desarrollar sistemas de software completos que integran Large Language Models y APIs de terceros para resolver problemas reales de automatización de contenido en redes sociales.
 
-#### ðŸ’» En clase / In-class work
-- Hardening de endpoints crÃ­ticos (timeouts, reintentos, sanitizaciÃ³n)
-- ConexiÃ³n del frontend existente con los endpoints `/chat`, `/catalog`, `/cart`
-- PlanificaciÃ³n del material de apoyo para la presentaciÃ³n final (slides, video)
+### 3.2 Competencias Específicas
 
-#### ðŸ§ª Tarea / Homework
-- Pulir experiencia end-to-end (de login a recomendaciÃ³n) en entorno local
-- Grabar borrador del video demo (â‰¤3 min) y recolectar feedback
-- Finalizar documentaciÃ³n tÃ©cnica y guÃ­a de pruebas
+**C1. Integración de LLMs:**
+- Diseñar prompts efectivos para diferentes contextos
+- Implementar APIs de LLM (OpenAI, Claude, Ollama)
+- Optimizar respuestas mediante prompt engineering
+- Manejar limitaciones y errores de modelos
 
-### Clase 8 â€” Presentaciones Finales (27 nov)
+**C2. Integración de APIs de Redes Sociales:**
+- Implementar autenticación OAuth 2.0
+- Publicar contenido en múltiples plataformas
+- Manejar rate limiting y reintentos
+- Cumplir con políticas de uso de APIs
 
-#### Actividades
-- PresentaciÃ³n final (10 min) + Q&A (5 min) por equipo
-- EvaluaciÃ³n formal con rÃºbrica completa (backend, LLM, UX, documentaciÃ³n)
-- Cierre del curso y reflexiÃ³n sobre aprendizajes
+**C3. Arquitectura de Sistemas:**
+- Diseñar arquitecturas escalables
+- Implementar sistemas de colas (Redis + Bull/Celery)
+- Desarrollar APIs REST
+- Gestionar estado con bases de datos
 
-#### Entregables
-- Repositorio actualizado (backend + frontend mÃ­nimo) con README completo
-- Video demo â‰¤3 min, slides de apoyo â‰¤10 diapositivas
-- `.env.example`, scripts de inicializaciÃ³n y documentaciÃ³n de decisiones
+**C4. Desarrollo Full-Stack:**
+- Backend (FastAPI o NestJS)
+- Frontend (React)
+- Base de datos (PostgreSQL/MongoDB)
+- Deployment con Docker
 
+**C5. Buenas Prácticas:**
+- Versionado con Git
+- Documentación técnica
+- Seguridad (manejo de credenciales)
+- Testing y logging
 
-## ðŸ“Š Sistema de EvaluaciÃ³n
+### 3.3 Objetivos de Aprendizaje
 
-### DistribuciÃ³n de Notas
+Al finalizar el curso, el estudiante será capaz de:
 
-| Criterio / Criterion | Peso / Weight |
-|----------------------|---------------|
-| PresentaciÃ³n parcial (Clase 6) | 20% |
-| PresentaciÃ³n final (Clase 8) | 20% |
-| Tareas y prÃ¡cticas en clase | 60% |
-| **TOTAL** | **100%** |
-
-### EvaluaciÃ³n por Rol
-
-**Backend & LLM Engineer:**
-- Arquitectura y diseÃ±o del sistema
-- ImplementaciÃ³n de embeddings y RAG
-- Desarrollo de API endpoints
-- LÃ³gica de negocio y funciones
-
-**Frontend & UX Engineer:**
-- DiseÃ±o de interfaz intuitiva
-- Componentes reutilizables
-- InteracciÃ³n y feedback visual
-- Experiencia de usuario
+1. **Diseñar e implementar** sistemas que utilicen LLMs para transformación de contenido
+2. **Integrar** múltiples APIs de terceros en un sistema cohesivo
+3. **Desarrollar** aplicaciones full-stack con arquitectura de microservicios
+4. **Aplicar** buenas prácticas de desarrollo, documentación y seguridad
+5. **Presentar** soluciones técnicas de manera clara y profesional
 
 ---
 
-## âœ… Checklist de Entregables
+## 4. CONTENIDO DEL CURSO
 
-### Repositorio
-- [ ] CÃ³digo fuente completo (frontend + backend)
-- [ ] Archivo `.env.example` con variables requeridas
-- [ ] Scripts de instalaciÃ³n (`requirements.txt` / `package.json`)
-- [ ] Dataset de productos con embeddings
+### Clase Introductoria - Jueves 7 nov
+**Tema:** Presentación del Proyecto
 
-### Funcionalidad
-- [ ] CatÃ¡logo de productos (â‰¥20 items)
-- [ ] BÃºsqueda semÃ¡ntica con RAG
-- [ ] Function calling (carrito completo)
-- [ ] UI de chat funcional
-- [ ] Recomendaciones y comparaciÃ³n
+**Contenido:**
+- Introducción al problema de publicación multi-red social
+- Arquitectura general del sistema
+- Componentes: LLM, APIs, Backend, Frontend
+- Calendario y sistema de evaluación
+- Asignación del proyecto
 
-### Pruebas y Calidad
-- [ ] 6+ prompt tests documentados
-- [ ] Tests unitarios de funciones crÃ­ticas
-- [ ] 5+ LLM evals de recomendaciones
-- [ ] Manejo de errores y edge cases
+**Material:**
+- PROYECTO-REDES-SOCIALES.md
+- TAREAS-Y-ENTREGABLES.md
+- Links a documentación de APIs
 
-### DocumentaciÃ³n
-- [ ] README completo con setup instructions
-- [ ] DocumentaciÃ³n de API endpoints
-- [ ] Casos de uso documentados
-- [ ] Decisiones arquitectÃ³nicas explicadas
-
-### PresentaciÃ³n
-- [ ] Video demo (â‰¤3 minutos)
-- [ ] Slides de presentaciÃ³n (â‰¤10)
-- [ ] Diagrama de arquitectura
-- [ ] Demo funcional en vivo
+**Sin entregables**
 
 ---
 
-## ðŸ’» PreparaciÃ³n Antes de Clase 1
+### Clase 1 - Martes 12 nov
+**Tema:** Investigación de APIs y Selección de Stack
 
-### Instalaciones Requeridas
+**Objetivos:**
+- Investigar y comparar APIs de redes sociales
+- Seleccionar modelo LLM apropiado
+- Diseñar arquitectura del sistema
+- Definir stack tecnológico
 
-#### Windows
-```bash
-# Node.js
-winget install OpenJS.NodeJS
+**Contenido:**
+- Meta Business API (Facebook + Instagram)
+- LinkedIn Share API
+- TikTok Content Posting API
+- WhatsApp Business API (Twilio vs Meta)
+- Comparativa de LLMs (GPT, Claude, Llama)
+- Arquitectura de microservicios
+- Diseño de base de datos
 
-# Python
-winget install Python.Python.3.11
+**Entregables:**
+- **Exposición (40%):** Presentación de investigación (15 min)
+- **Documento (60%):** Investigación completa (PDF/MD, 5-10 páginas)
+  - Investigación de APIs (40%)
+  - Tabla de características de redes (30%)
+  - Selección de LLM (20%)
+  - Propuesta de arquitectura (10%)
 
-# Ollama (opcional)
-winget install Ollama.Ollama
-
-# Git
-winget install Git.Git
-```
-
-#### macOS
-```bash
-# Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Node.js, Python y Git
-brew install node python git ollama
-```
-
-#### Ubuntu / Linux
-```bash
-sudo apt update && sudo apt install -y nodejs npm python3 python3-venv git curl
-
-# Instalar Ollama
-curl -fsSL https://ollama.ai/install.sh | sh
-```
-
-### VerificaciÃ³n
-```bash
-node -v          # v18+ requerido
-python3 --version # 3.10+ requerido
-ollama --version # opcional
-git --version
-```
-
-### Cuentas Necesarias
-- GitHub (para repositorio del proyecto)
-- OpenAI API (crÃ©ditos gratuitos) **O** instalar Ollama localmente
-- (Opcional) Vercel/Render para deployment
+**Evaluación:** 10% de la nota final
 
 ---
 
-## ðŸ“š Recursos y Referencias
+### Clase 2 - Jueves 14 nov
+**Tema:** Prototipo de Adaptación con LLM
 
-### DocumentaciÃ³n Oficial
-- **OpenAI API:** https://platform.openai.com/docs
-- **LangChain Docs:** https://python.langchain.com
-- **Ollama Local Models:** https://ollama.ai
-- **FastAPI Docs:** https://fastapi.tiangolo.com
-- **NestJS Docs:** https://docs.nestjs.com
-- **ChromaDB:** https://docs.trychroma.com
-- **pgvector:** https://github.com/pgvector/pgvector
-- **React + Vite:** https://vitejs.dev/guide/
+**Objetivos:**
+- Implementar sistema de adaptación de contenido
+- Diseñar prompts para cada red social
+- Validar transformaciones de texto
 
-### Herramientas Recomendadas
-- **IDE:** VS Code, Cursor, PyCharm
-- **API Testing:** Postman, Thunder Client, HTTPie
-- **Git:** GitHub Desktop, GitKraken
-- **Deployment:** Vercel, Render, Hugging Face Spaces
+**Contenido:**
+- Prompt engineering para redes sociales
+- Integración con API de LLM elegida
+- Diseño de prompts system
+- Validación de límites de caracteres
+- Manejo de errores del LLM
 
----
+**Entregables:**
+- **Exposición (40%):** Demo de adaptación (15 min)
+- **Código + Demo (60%):**
+  - Sistema de adaptación funcionando
+  - API/módulo que transforma contenido para 5 redes
+  - Documentación de prompts
+  - 3 casos de prueba demostrados
+  - Repositorio Git con código
 
-## ðŸ§  Extensiones Opcionales
-
-Equipos avanzados pueden implementar:
-
-1. **Voz / Voice:** Integrar Whisper (STT) o Speechify (TTS)
-2. **VisiÃ³n / Vision:** Subir imÃ¡genes y reconocer productos
-3. **AnalÃ­tica / Analytics:** Dashboard con mÃ©tricas de conversaciÃ³n
-4. **Despliegue / Deployment:** Deploy en Vercel, Render, HF Spaces
-5. **Multi-idioma:** Soporte para espaÃ±ol e inglÃ©s
-6. **HistÃ³rico:** Persistencia de conversaciones en DB
+**Evaluación:** 10% de la nota final
 
 ---
 
-## ðŸ“‹ PolÃ­ticas del Curso
+### Clase 3 - Martes 19 nov
+**Tema:** Integración con APIs - Parte 1 (Meta + LinkedIn)
 
-### Asistencia
-- MÃ­nimo 75% de asistencia requerida
-- ParticipaciÃ³n activa en clase es valorada
+**Objetivos:**
+- Publicar contenido en Facebook
+- Publicar contenido en Instagram
+- Publicar contenido en LinkedIn
+- Implementar manejo robusto de errores
 
-### Entregas
-- **Checkpoint obligatorio:** PresentaciÃ³n parcial el 20 de noviembre (Clase 6)
-- **Entrega final:** 27 de noviembre 2025, 23:59
-- PenalizaciÃ³n por retraso: -10% por dÃ­a
+**Contenido:**
+- Meta Graph API: autenticación y publicación
+- Instagram: Container creation flow
+- LinkedIn Share API
+- OAuth 2.0 implementation
+- Rate limiting y reintentos
+- Logging estructurado
 
-### Integridad AcadÃ©mica
-- Uso de LLMs (ChatGPT, Claude, etc.) **permitido y fomentado**
-- Documentar el uso de IA en el README
-- CÃ³digo de terceros debe ser citado
-- ColaboraciÃ³n entre equipos permitida (pero entregas propias)
+**Entregables:**
+- **Exposición (40%):** Proceso de integración (15 min)
+- **Código + Demo (60%):**
+  - Facebook funcionando (mínimo 1 post real)
+  - Instagram funcionando (mínimo 1 post real)
+  - LinkedIn funcionando (mínimo 1 post real)
+  - Endpoints para publicación
+  - Manejo de errores implementado
+  - Sistema de logs
+  - Guía de setup de apps
 
-### Trabajo en Equipos
-- MÃ¡ximo 2 personas por equipo
-- DivisiÃ³n clara de responsabilidades
-- Ambos miembros deben poder explicar todo el proyecto
-
----
-
-## ðŸ“ž Contacto y Soporte
-
-- Canal de comunicaciÃ³n oficial: [Slack/Discord - Por definir]
-- Correo de coordinaciÃ³n acadÃ©mica: [Por definir]
-- Horario de consultas: [Por definir]
-
----
-
-## ðŸš€ Notas Finales
-
-Este curso estÃ¡ diseÃ±ado para ser **prÃ¡ctico, incremental y colaborativo**. Cada clase construye sobre la anterior, por lo que es fundamental:
-
-1. **Asistir a todas las clases** y completar las tareas
-2. **Preguntar activamente** cuando algo no estÃ© claro
-3. **Experimentar** mÃ¡s allÃ¡ de los requisitos mÃ­nimos
-4. **Documentar** decisiones y aprendizajes
-5. **Compartir** conocimiento con compaÃ±eros
-
-> **Consejo:** Empezar simple y agregar complejidad gradualmente. Un chatbot bÃ¡sico que funciona bien es mejor que uno complejo que falla.
+**Evaluación:** 15% de la nota final
 
 ---
 
-**Ãšltima actualizaciÃ³n:** 4 de noviembre 2025
-**VersiÃ³n:** 1.0
+### Clase 4 - Jueves 21 nov
+**Tema:** Integración con APIs - Parte 2 (TikTok + WhatsApp) + Backend
+
+**Objetivos:**
+- Completar integración de redes sociales
+- Implementar backend central con BD
+- Sistema de colas para publicaciones
+- API REST completa
+
+**Contenido:**
+- TikTok Content Posting (o alternativa)
+- WhatsApp Business API (Twilio)
+- Base de datos (PostgreSQL/MongoDB)
+- Sistema de colas (Redis + Bull/Celery)
+- API REST para orquestación
+- Flujo end-to-end completo
+
+**Entregables:**
+- **Exposición (40%):** Arquitectura completa (20 min)
+- **Código + Demo (60%):**
+  - TikTok funcionando (mínimo caption)
+  - WhatsApp funcionando (mínimo 3 mensajes)
+  - Base de datos con migrations
+  - API REST implementada
+  - Sistema de colas funcionando
+  - Demo de flujo completo: crear post ’ adaptar ’ publicar
+
+**Evaluación:** 15% de la nota final
+
+---
+
+### Clase 5 - Martes 26 nov
+**Tema:** Portal Web y Sistema Completo
+
+**Objetivos:**
+- Implementar interfaz web
+- Integrar todos los componentes
+- Sistema funcionando end-to-end
+- Preparación para presentación final
+
+**Contenido:**
+- Frontend con React
+- Páginas: Crear, Preview, Dashboard
+- Integración frontend-backend
+- UX para preview de adaptaciones
+- Monitoreo de estado de publicaciones
+- Refinamiento del sistema completo
+
+**Entregables:**
+- **Exposición (40%):** Demo del portal (20 min)
+- **Código + Demo (60%):**
+  - Portal web completo y funcional
+  - 3 páginas implementadas
+  - Las 5 redes publicando correctamente
+  - Documentación completa (README, API docs, SETUP)
+  - Video demo de 2-3 min
+  - Sistema listo para presentación final
+
+**Evaluación:** 10% de la nota final
+
+---
+
+### Clase 6 - Jueves 28 nov
+**PRESENTACIÓN FINAL**
+
+**Formato:**
+- **Presentación técnica (25 min):**
+  - Introducción al problema
+  - Arquitectura y tecnologías
+  - Componente LLM
+  - Integraciones con APIs
+  - Backend y orquestación
+
+- **Demo en VIVO (20 min):**
+  - Crear publicación en portal
+  - Generar adaptaciones con LLM
+  - Publicar en las 5 redes
+  - Verificar publicaciones en cada plataforma
+  - Mostrar dashboard
+
+- **Challenges y Aprendizajes (10 min)**
+- **Q&A (5 min)**
+
+**Entregables:**
+- Sistema completo funcionando
+- Repositorio Git con todo el código
+- Documentación completa
+- Video demo (2-3 min)
+- Slides de presentación
+
+**Evaluación:** 40% de la nota final
+- Funcionalidad: 20%
+- Calidad código: 5%
+- Documentación: 5%
+- Presentación: 10%
+
+---
+
+## 5. METODOLOGÍA
+
+### 5.1 Estrategias Didácticas
+
+**Aprendizaje Basado en Proyectos:**
+- Proyecto único desarrollado incrementalmente
+- Cada clase construye sobre la anterior
+- Entregables tangibles semanalmente
+
+**Learning by Doing:**
+- 60% del tiempo en implementación
+- Demos en vivo obligatorias
+- Experimentación con tecnologías reales
+
+**Peer Learning:**
+- Discusiones grupales de soluciones
+- Compartir challenges y soluciones
+- Retroalimentación constructiva
+
+### 5.2 Estructura de Clases
+
+**Antes de clase:**
+- Lectura de material asignado
+- Investigación previa
+- Setup de ambiente
+
+**Durante clase:**
+- Exposiciones de estudiantes (40%)
+- Demos en vivo (60%)
+- Discusión de challenges
+- Retroalimentación del docente
+
+**Después de clase:**
+- Desarrollo del siguiente entregable
+- Consultas asíncronas
+- Documentación del progreso
+
+---
+
+## 6. EVALUACIÓN
+
+### 6.1 Sistema de Calificación
+
+**Clases 1-5 (60% total):**
+
+| Clase | Peso | Componentes |
+|-------|------|-------------|
+| Clase 1 | 10% | Exposición (4%) + Investigación (6%) |
+| Clase 2 | 10% | Exposición (4%) + Código/Demo (6%) |
+| Clase 3 | 15% | Exposición (6%) + Código/Demo (9%) |
+| Clase 4 | 15% | Exposición (6%) + Código/Demo (9%) |
+| Clase 5 | 10% | Exposición (4%) + Código/Demo (6%) |
+
+**Presentación Final (40% total):**
+
+| Componente | Peso | Criterios |
+|------------|------|-----------|
+| Funcionalidad | 20% | Sistema completo funcionando, las 5 redes publicando |
+| Calidad código | 5% | Código limpio, organizado, buenas prácticas |
+| Documentación | 5% | README, API docs, guías de setup completas |
+| Presentación | 10% | Claridad, estructura, demo exitoso, Q&A |
+
+### 6.2 Criterios de Evaluación por Clase
+
+**Exposición (40% de cada clase):**
+- Claridad y organización: 15%
+- Profundidad técnica: 15%
+- Manejo de preguntas: 10%
+
+**Código/Demo (60% de cada clase):**
+- Funcionalidad correcta: 30%
+- Calidad del código: 15%
+- Demo en vivo exitoso: 10%
+- Documentación: 5%
+
+### 6.3 Escala de Calificación
+
+- **90-100:** Excelente - Supera expectativas
+- **80-89:** Muy bueno - Cumple todas las expectativas
+- **70-79:** Bueno - Cumple expectativas básicas
+- **60-69:** Suficiente - Cumple mínimos
+- **<60:** Insuficiente - No cumple requisitos
+
+### 6.4 Políticas de Entrega
+
+**Puntualidad:**
+- Las exposiciones son en el horario de clase (no hay prórroga)
+- El código debe estar en Git antes de la clase
+- Demos deben ejecutarse en tiempo real
+
+**Integridad Académica:**
+- Trabajo individual obligatorio
+- Se permite consultar documentación y recursos
+- Copiar código de otros estudiantes = 0 puntos
+- Uso de IA para generar código debe ser documentado
+
+**Asistencia:**
+- Asistencia obligatoria a todas las clases
+- Más de 2 faltas = reprobación automática
+- Las exposiciones no se pueden recuperar
+
+---
+
+## 7. RECURSOS
+
+### 7.1 Recursos Obligatorios
+
+**Documentación del Proyecto:**
+- PROYECTO-REDES-SOCIALES.md
+- TAREAS-Y-ENTREGABLES.md
+- Material en `/lectures`
+
+**Documentación de APIs:**
+- Meta Graph API: https://developers.facebook.com/docs/graph-api
+- LinkedIn API: https://docs.microsoft.com/en-us/linkedin/
+- TikTok API: https://developers.tiktok.com/
+- WhatsApp Business: https://developers.facebook.com/docs/whatsapp
+- Twilio: https://www.twilio.com/docs/whatsapp
+
+**Documentación de LLMs:**
+- OpenAI: https://platform.openai.com/docs
+- Anthropic: https://docs.anthropic.com
+- Ollama: https://ollama.ai
+
+### 7.2 Herramientas Necesarias
+
+**Software:**
+- Editor: VS Code (recomendado)
+- Control de versiones: Git + GitHub/GitLab
+- Testing: Postman o Insomnia
+- Containers: Docker (opcional)
+
+**Cuentas:**
+- GitHub/GitLab (gratuito)
+- Meta for Developers (gratuito)
+- LinkedIn Developers (gratuito)
+- OpenAI (de pago, créditos gratis iniciales)
+- Twilio (sandbox gratuito)
+
+### 7.3 Bibliografía Recomendada
+
+**Artículos Académicos:**
+- Brown et al. (2020) - "Language Models are Few-Shot Learners"
+- Lewis et al. (2020) - "Retrieval-Augmented Generation"
+- Wei et al. (2022) - "Chain-of-Thought Prompting"
+
+**Libros:**
+- "Designing Data-Intensive Applications" - Martin Kleppmann
+- "Building Microservices" - Sam Newman
+- "The Pragmatic Programmer" - Hunt & Thomas
+
+**Recursos Online:**
+- Anthropic Prompt Library
+- OpenAI Cookbook
+- FastAPI/NestJS Official Docs
+
+---
+
+## 8. POLÍTICAS DEL CURSO
+
+### 8.1 Código de Conducta
+
+**Respeto:**
+- Trato respetuoso entre todos
+- Feedback constructivo en discusiones
+- No discriminación de ningún tipo
+
+**Integridad:**
+- Trabajo individual honesto
+- Citar fuentes apropiadamente
+- No plagio de código
+
+**Profesionalismo:**
+- Puntualidad en entregas y asistencia
+- Comunicación clara y oportuna
+- Preparación adecuada para clases
+
+### 8.2 Comunicación
+
+**Canales:**
+- Email: [Definir]
+- Horario de consultas: [Definir]
+- [Plataforma de comunicación]: [Definir]
+
+**Tiempos de respuesta:**
+- Email: 24-48 horas
+- Durante horario de consultas: Inmediato
+
+### 8.3 Casos Especiales
+
+**Problemas técnicos:**
+- Si una API no es accesible: Documentar intento y proponer alternativa
+- Si el LLM falla: Tener plan B (screenshots, respuestas pre-generadas)
+- Si la demo falla: Tener video/screenshots de respaldo
+
+**Situaciones especiales:**
+- Problemas de salud: Contactar inmediatamente
+- Emergencias: Evaluación caso por caso
+- Problemas de acceso a herramientas: Solicitar ayuda temprano
+
+---
+
+## 9. CALENDARIO DETALLADO
+
+| Semana | Fecha | Día | Actividad | Entregable |
+|--------|-------|-----|-----------|------------|
+| 1 | 07 nov | J | Clase Introductoria | - |
+| 2 | 12 nov | M | Clase 1: Investigación | Documento investigación |
+| 2 | 14 nov | J | Clase 2: Prototipo LLM | Sistema adaptación |
+| 3 | 19 nov | M | Clase 3: APIs Meta+LI | 3 redes funcionando |
+| 3 | 21 nov | J | Clase 4: TikTok+WA+BE | Sistema end-to-end |
+| 4 | 26 nov | M | Clase 5: Portal Web | Sistema completo |
+| 4 | 28 nov | J | Presentación Final | Proyecto + docs |
+
+---
+
+## 10. RESULTADOS DE APRENDIZAJE ESPERADOS
+
+Al completar exitosamente este curso, los estudiantes habrán:
+
+1. **Desarrollado** un sistema full-stack completo con arquitectura de microservicios
+2. **Integrado** al menos 4 APIs de terceros (Meta, LinkedIn, WhatsApp, y TikTok o alternativa)
+3. **Implementado** un sistema de adaptación de contenido usando LLM
+4. **Aplicado** buenas prácticas de desarrollo (Git, documentación, seguridad)
+5. **Demostrado** capacidad de presentar soluciones técnicas profesionalmente
+
+---
+
+## 11. CAMBIOS AL SYLLABUS
+
+Este syllabus puede ser modificado durante el curso si es necesario. Cualquier cambio será comunicado oportunamente a los estudiantes.
+
+**Última actualización:** 7 de noviembre de 2025
+
+---
+
+**Firma del Docente:** ___________________
+
+**Fecha:** ___________________
+
+---
+
+¡Bienvenidos al curso! =€
